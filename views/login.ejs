@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+</head>
+<body>
+    <center>
+        <form action="/user/login" method="post">
+            Email: <input type="email" name="email" id="email">
+            Password: <input type="password" name="password" id="password">
+
+            <button type="submit">Submit</button>
+        </form>
+    </center>
+    <% if (typeof(error) != "undefined") { %>
+        <% error.forEach((err)=>{ %> 
+            <div><%= err.msg %> </div>
+        <% }) %> 
+    <% } %>
+    <% if (typeof(errorM) != "undefined") { %>
+        <div><%= errorM %></div>
+    <% } %>
+</body>
+</html>
